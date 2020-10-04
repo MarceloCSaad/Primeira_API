@@ -15,6 +15,7 @@
         <table>
             <thead>
                 <tr>
+                <!-- Cada tr é uma coluna de uma tabela -->
                     <th>Nome</th>
                     <th>Email</th>
                 </tr>
@@ -24,5 +25,30 @@
             </tbody>
         </table>
     </section>
+
+    <script>
+        const tableBody = document.querySelector("section table tbody")
+        /*  Seleciona um elemento do teu html atraves de um seletor (entre áspas)
+            Para selecionar uma classe deve-se colocar um "." (ponto) antes da classe i.e ".user-form" */
+        fetch("http://localhost:5000/users")
+            .then(res => res.json())
+            .then(json => {
+                console.log(json);
+                json.forEach(user => {
+                    let tr = document.createElement("tr") //criou uma nova table row (igual fizemos antes no head)
+                    let tdName = document.createElement("td") //criou uma table data pro nome (vai entrar nas colunas da table)
+                    let tdEmail = document.createElement("td") //criou uma table data pro email (vai entrar nas colunas da table)
+
+
+                    tdName.innerHTML = user.name
+                    tdEmail.innerHTML = user.email
+
+                    tr.appendChild(tdName)
+                    tr.appendChild(tdEmail)
+                    tableBody.appendChild(tr)
+                })
+            })
+    </script>
+
 </body>
 </html>

@@ -60,7 +60,7 @@ app.post("/users", (req, res) => {
 app.get("/users", (req,res) => {
     const rawData = fs.readFileSync("./DB/data.json");
     const data = JSON.parse(rawData);
-    res.send(data);
+    res.send(data.users);
 })
 
 
