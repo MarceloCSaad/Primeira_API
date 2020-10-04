@@ -1,0 +1,55 @@
+<!-- Vamos fazer uma página HTML vanilla (sem usar React).
+Ao usar React, usa-se componentes que são chamados pelo html e que são renderizados ao longo da tua página conforme são chamados
+Ainda assim, criamos a pasta componentes só pra simular (mesmo q esteja vazia) -->
+
+<!-- how to start -> escreve htm e escolhe a opção html: 5 e o VS vai gerar pra vc o boiler-plate abaixo:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+</head>
+<body>
+    <!-- Aqui começa o conteúdo da página -->
+    <header>
+        <a href="./components/users.html">Tabela de usuários</a>
+    </header>
+    <section>
+        <!-- Vamos criar um form com seletor id. Pra isso, digite form#whateverNameHere pra criar um id:
+        <form action="" id="whateverNameHere"></form> -->
+
+        <!-- Se quiser, pode-se adicionar um "style: xxx;". Esse Style vai ter prioridade sobre o CSS chamado pelo teu form.
+        No exemplo, a height vai estar travada em 10px nesse form, independente do seletor usado no arquivo CSS. Veja abaixo:
+        <form action="" id="whateverNameHere" style="height: 10px;"></form>  -->
+
+        <!-- O form com o seletor Class é tipo o form com seletor ID, mas com prioridade menor na hora aplicar os estilos:
+        <form action="" class="whateverNameHere"></form>
+        
+        usa-se o seletor id quando você vai ter algo muito único, para todo o resto é melhor usar class. Dessa forma o seu HTML vai aplicar o estilo em todos os forms conforme cada class selecionada
+        OBS: HTML aplica estilos em cascata, olhando os seletores e aplicando as instruções nos arquivos CSS em cascata até a página estar completa-->
+
+        <form class="user-form" method="POST">
+            <h1>Formulário de Usuário:</h1>
+            <input type="text" name="name" placeholder="Name"> 
+            <input type="email" name="email" placeholder="Email">
+
+            <button formaction="http://localhost:5000/users">Registrar</button>
+        </form>
+        
+    </section>
+</body>
+</html>
