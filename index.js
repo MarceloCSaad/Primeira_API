@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 //Simular um banco de dados de usuários:
-const users = []; //
+const users = [
+    
+]; //
 let id = 1;
 
-
+app.use(cors());
 app.use(express.json()); //middlewear que a gente bota antes pra que a API consiga entender requests de json (ela faz um ".parseJSON")
 
 app.post("/users", (req, res) => {
@@ -19,8 +22,10 @@ app.post("/users", (req, res) => {
         email:email,
         createdAt:Date.now().toString()
     };
+    console.log(newUser)
     users.push(newUser);
     id++;
+    res.send("fullfilled")
 })
 
 app.get("/users", (req,res) => {
