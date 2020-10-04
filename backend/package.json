@@ -1,22 +1,14 @@
 {
-  "name": "primeira_api",
+  "name": "backend",
   "version": "1.0.0",
   "description": "Criando a primeira API com sandus maximus",
   "main": "index.js",
   "scripts": {
     "start": "nodemon"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MarceloCSaad/Primeira_API.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MarceloCSaad/Primeira_API/issues"
-  },
-  "homepage": "https://github.com/MarceloCSaad/Primeira_API#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

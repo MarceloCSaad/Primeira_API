@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const fs = require("fs"); //dependencia que ajuda a manipular e escrever arquivos (file systems)
-const { raw } = require("body-parser");
 
 app.use(cors());
 app.use(bodyParser.json()); //middlewear que a gente bota antes pra que a API consiga entender requests de json (ela faz um ".parseJSON")
@@ -61,8 +60,7 @@ app.post("/users", (req, res) => {
 app.get("/users", (req,res) => {
     const rawData = fs.readFileSync("./DB/data.json");
     const data = JSON.parse(rawData);
-    res.send(data.users);
-
+    res.send(data);
 })
 
 
